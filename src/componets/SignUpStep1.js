@@ -3,7 +3,7 @@ import './SignUpStep1.css';
 
 const SignUpStep1 = ({ onNext }) => {
   const [formData, setFormData] = useState({
-    username: '',
+    email: '',
     password: '',
     confirmPassword: ''
   });
@@ -16,8 +16,8 @@ const SignUpStep1 = ({ onNext }) => {
   };
 
   const handleContinue = () => {
-    if (formData.password === formData.confirmPassword && formData.username && formData.password) {
-      onNext(formData);
+    if (formData.password === formData.confirmPassword && formData.email && formData.password) {
+      onNext({ email: formData.email, password: formData.password });
     }
   };
 
@@ -27,10 +27,10 @@ const SignUpStep1 = ({ onNext }) => {
         <h1 className="signup-title">Sign Up</h1>
         <div className="input-container">
           <input
-            type="text"
-            name="username"
-            placeholder="Username"
-            value={formData.username}
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={formData.email}
             onChange={handleInputChange}
             className="signup-input"
           />

@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './SignUpStep2.css';
+import { useAuth } from '../context/AuthContext';
 
 const SignUpStep2 = ({ onComplete, onBack }) => {
+  const { signup } = useAuth();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     nativeLanguage: '',
@@ -9,6 +13,8 @@ const SignUpStep2 = ({ onComplete, onBack }) => {
     age: ''
   });
   const [showDropdown, setShowDropdown] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState('');
 
   const languages = [
     'Hindi', 'Italian', 'Spanish', 'Russian', 'English', 'French', 
@@ -30,9 +36,28 @@ const SignUpStep2 = ({ onComplete, onBack }) => {
     setShowDropdown(false);
   };
 
-  const handleTakeTest = () => {
-    if (formData.name && formData.nativeLanguage && formData.grade && formData.age) {
-      onComplete(formData);
+  const handleTakeTest = async () => {
+    // Allow test to be taken with any input (or empty fields)
+    setSubmitting(true);
+    setError('');
+    try {
+      // Use default values if fields are empty
+      const testData = {
+        name: formData.name || 'Guest User',
+        nativeLanguage: formData.nativeLanguage || 'English',
+        grade: formData.grade || 'Grade 5',
+        age: formData.age || '10'
+      };
+      
+      // Store user data in localStorage for the test
+      localStorage.setItem('userTestData', JSON.stringify(testData));
+      
+      // Navigate to placement test page
+      navigate('/placement-test');
+    } catch (e) {
+      setError(e?.message || 'Something went wrong');
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -44,7 +69,7 @@ const SignUpStep2 = ({ onComplete, onBack }) => {
           <input
             type="text"
             name="name"
-            placeholder="Name"
+            placeholder="Name (optional)"
             value={formData.name}
             onChange={handleInputChange}
             className="signup-input"
@@ -57,7 +82,7 @@ const SignUpStep2 = ({ onComplete, onBack }) => {
               <span className="search-icon">🔍</span>
               <input
                 type="text"
-                placeholder="Native Language"
+                placeholder="Native Language (optional)"
                 value={formData.nativeLanguage}
                 readOnly
                 className="language-placeholder"
@@ -93,7 +118,7 @@ const SignUpStep2 = ({ onComplete, onBack }) => {
             <input
               type="text"
               name="grade"
-              placeholder="Grade"
+              placeholder="Grade (optional)"
               value={formData.grade}
               onChange={handleInputChange}
               className="signup-input"
@@ -103,7 +128,7 @@ const SignUpStep2 = ({ onComplete, onBack }) => {
           <input
             type="number"
             name="age"
-            placeholder="Age"
+            placeholder="Age (optional)"
             value={formData.age}
             onChange={handleInputChange}
             className="signup-input"
@@ -111,11 +136,13 @@ const SignUpStep2 = ({ onComplete, onBack }) => {
             max="100"
           />
         </div>
+        {error && <div style={{ color: 'red', marginBottom: 10 }}>{error}</div>}
         <button 
           className="signup-button"
           onClick={handleTakeTest}
+          disabled={submitting}
         >
-          Take Placement Test
+          {submitting ? 'Please wait...' : 'Take Placement Test (Goes to Next Page)'}
         </button>
       </div>
     </div>

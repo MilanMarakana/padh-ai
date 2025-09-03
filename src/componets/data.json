@@ -1,0 +1,232 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "questionNumber": 1,
+      "question": "Complete the sentence: I ___ to school every day.",
+      "answer": "go",
+      "type": "fill_blank"
+    },
+    {
+      "id": "q2",
+      "questionNumber": 2,
+      "question": "What is the capital of England?",
+      "options": ["London", "Manchester", "Birmingham", "Liverpool"],
+      "answer": "London",
+      "type": "single_choice"
+    },
+    {
+      "id": "q3",
+      "questionNumber": 3,
+      "question": "Which of the following are fruits?",
+      "options": ["Apple", "Carrot", "Banana", "Potato", "Orange"],
+      "answer": ["Apple", "Banana", "Orange"],
+      "type": "multiple_choice",
+      "selectCount": 3
+    },
+    {
+      "id": "q4",
+      "questionNumber": 4,
+      "question": "Is the Earth round?",
+      "answer": "yes",
+      "type": "yes_no"
+    },
+    {
+      "id": "q5",
+      "questionNumber": 5,
+      "question": "What is your favorite color and why?",
+      "answer": "blue because it's calming",
+      "type": "short_answer"
+    },
+    {
+      "id": "q6",
+      "questionNumber": 6,
+      "question": "The sun ___ in the east.",
+      "answer": "rises",
+      "type": "fill_blank"
+    },
+    {
+      "id": "q7",
+      "questionNumber": 7,
+      "question": "Which planet is closest to the Sun?",
+      "options": ["Earth", "Mars", "Mercury", "Venus"],
+      "answer": "Mercury",
+      "type": "single_choice"
+    },
+    {
+      "id": "q8",
+      "questionNumber": 8,
+      "question": "Which of these are programming languages?",
+      "options": ["Python", "Java", "HTML", "CSS", "JavaScript"],
+      "answer": ["Python", "Java", "JavaScript"],
+      "type": "multiple_choice",
+      "selectCount": 3
+    },
+    {
+      "id": "q9",
+      "questionNumber": 9,
+      "question": "Do you like reading books?",
+      "answer": "yes",
+      "type": "yes_no"
+    },
+    {
+      "id": "q10",
+      "questionNumber": 10,
+      "question": "Describe your ideal vacation destination.",
+      "answer": "beach resort with clear water",
+      "type": "short_answer"
+    },
+    {
+      "id": "q11",
+      "questionNumber": 11,
+      "question": "She ___ her homework yesterday.",
+      "answer": "completed",
+      "type": "fill_blank"
+    },
+    {
+      "id": "q12",
+      "questionNumber": 12,
+      "question": "What is the largest ocean in the world?",
+      "options": ["Atlantic", "Indian", "Pacific", "Arctic"],
+      "answer": "Pacific",
+      "type": "single_choice"
+    },
+    {
+      "id": "q13",
+      "questionNumber": 13,
+      "question": "Which of these are social media platforms?",
+      "options": ["Facebook", "Instagram", "Gmail", "Twitter", "LinkedIn"],
+      "answer": ["Facebook", "Instagram", "Twitter", "LinkedIn"],
+      "type": "multiple_choice",
+      "selectCount": 4
+    },
+    {
+      "id": "q14",
+      "questionNumber": 14,
+      "question": "Is water wet?",
+      "answer": "yes",
+      "type": "yes_no"
+    },
+    {
+      "id": "q15",
+      "questionNumber": 15,
+      "question": "What makes a good friend?",
+      "answer": "trustworthy and supportive",
+      "type": "short_answer"
+    },
+    {
+      "id": "q16",
+      "questionNumber": 16,
+      "question": "The weather is ___ today.",
+      "answer": "nice",
+      "type": "fill_blank"
+    },
+    {
+      "id": "q17",
+      "questionNumber": 17,
+      "question": "Which is the fastest land animal?",
+      "options": ["Lion", "Cheetah", "Leopard", "Tiger"],
+      "answer": "Cheetah",
+      "type": "single_choice"
+    },
+    {
+      "id": "q18",
+      "questionNumber": 18,
+      "question": "Which of these are vegetables?",
+      "options": ["Tomato", "Cucumber", "Strawberry", "Broccoli", "Spinach"],
+      "answer": ["Cucumber", "Broccoli", "Spinach"],
+      "type": "multiple_choice",
+      "selectCount": 3
+    },
+    {
+      "id": "q19",
+      "questionNumber": 19,
+      "question": "Do you speak English?",
+      "answer": "yes",
+      "type": "yes_no"
+    },
+    {
+      "id": "q20",
+      "questionNumber": 20,
+      "question": "What is your biggest fear and why?",
+      "answer": "heights because they make me dizzy",
+      "type": "short_answer"
+    },
+    {
+      "id": "q21",
+      "questionNumber": 21,
+      "question": "He ___ to the store every morning.",
+      "answer": "goes",
+      "type": "fill_blank"
+    },
+    {
+      "id": "q22",
+      "questionNumber": 22,
+      "question": "What is the main ingredient in bread?",
+      "options": ["Sugar", "Flour", "Salt", "Butter"],
+      "answer": "Flour",
+      "type": "single_choice"
+    },
+    {
+      "id": "q23",
+      "questionNumber": 23,
+      "question": "Which of these are sports?",
+      "options": ["Football", "Cooking", "Basketball", "Swimming", "Painting"],
+      "answer": ["Football", "Basketball", "Swimming"],
+      "type": "multiple_choice",
+      "selectCount": 3
+    },
+    {
+      "id": "q24",
+      "questionNumber": 24,
+      "question": "Is the sky blue?",
+      "answer": "yes",
+      "type": "yes_no"
+    },
+    {
+      "id": "q25",
+      "questionNumber": 25,
+      "question": "What is your dream job and why?",
+      "answer": "doctor to help people",
+      "type": "short_answer"
+    },
+    {
+      "id": "q26",
+      "questionNumber": 26,
+      "question": "They ___ dinner at 8 PM.",
+      "answer": "eat",
+      "type": "fill_blank"
+    },
+    {
+      "id": "q27",
+      "questionNumber": 27,
+      "question": "Which is the largest country in the world?",
+      "options": ["China", "USA", "Russia", "Canada"],
+      "answer": "Russia",
+      "type": "single_choice"
+    },
+    {
+      "id": "q28",
+      "questionNumber": 28,
+      "question": "Which of these are colors?",
+      "options": ["Red", "Blue", "Music", "Green", "Yellow"],
+      "answer": ["Red", "Blue", "Green", "Yellow"],
+      "type": "multiple_choice",
+      "selectCount": 4
+    },
+    {
+      "id": "q29",
+      "questionNumber": 29,
+      "question": "Do you enjoy learning new things?",
+      "answer": "yes",
+      "type": "yes_no"
+    },
+    {
+      "id": "q30",
+      "questionNumber": 30,
+      "question": "What is your biggest achievement so far?",
+      "answer": "graduating from university",
+      "type": "short_answer"
+    }
+  ]
+}

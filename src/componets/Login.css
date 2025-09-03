@@ -17,8 +17,15 @@
   color: #2A335C;
   font-size: 2.5rem;
   font-weight: bold;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.login-subtitle {
+  color: #2A335C;
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+  opacity: 0.9;
 }
 
 .input-container {
@@ -26,6 +33,19 @@
   flex-direction: column;
   gap: 1rem;
   margin-bottom: 2rem;
+}
+
+.input-group {
+  text-align: left;
+}
+
+.input-label {
+  display: block;
+  margin-bottom: 8px;
+  color: #2A335C;
+  font-weight: 600;
+  font-size: 1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .login-input {
@@ -39,6 +59,7 @@
   width: 100%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
+  box-sizing: border-box;
 }
 
 .login-input::placeholder {
@@ -50,6 +71,17 @@
   outline: none;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   transform: translateY(-1px);
+}
+
+.error-message {
+  background: rgba(255, 255, 255, 0.9);
+  color: #d32f2f;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  border: 1px solid #ffcdd2;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .login-button {
@@ -68,13 +100,19 @@
   margin-bottom: 1rem;
 }
 
-.login-button:hover {
+.login-button:hover:not(:disabled) {
   background-color: #1a2340;
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-.login-button:active {
+.login-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.login-button:active:not(:disabled) {
   transform: translateY(0);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
@@ -102,6 +140,11 @@
 @media (max-width: 480px) {
   .login-title {
     font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .login-subtitle {
+    font-size: 1rem;
     margin-bottom: 2.5rem;
   }
   
@@ -113,5 +156,10 @@
   .login-button {
     padding: 14px 28px;
     font-size: 1.1rem;
+  }
+  
+  .back-button {
+    padding: 12px 24px;
+    font-size: 0.9rem;
   }
 }
