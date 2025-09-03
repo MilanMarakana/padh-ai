@@ -82,6 +82,7 @@
 .language-dropdown-container {
   position: relative;
   margin-bottom: 1.5rem;
+  width: 360px;
 }
 
 .language-selector {

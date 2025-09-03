@@ -4,10 +4,12 @@ import './PlacementTest.css';
 import questionsData from './data.json';
 import api from '../api/client';
 import { useLanguage } from '../context/LanguageContext';
+import { useAuth } from '../context/AuthContext';
 
 const PlacementTest = ({ onFinishTest, onBack }) => {
   const navigate = useNavigate();
   const { t } = useLanguage();
+  const { login } = useAuth();
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState({});
   const [isTestStarted, setIsTestStarted] = useState(false);
@@ -41,7 +43,7 @@ const PlacementTest = ({ onFinishTest, onBack }) => {
   };
 
   const handleMultipleChoiceChange = (option) => {
-    const currentAnswers = answers[currentQuestion] || [];
+    const currentAnswers = Array.isArray(answers[currentQuestion]) ? answers[currentQuestion] : [];
     let newAnswers;
     
     if (currentAnswers.includes(option)) {
@@ -49,6 +51,8 @@ const PlacementTest = ({ onFinishTest, onBack }) => {
     } else {
       newAnswers = [...currentAnswers, option];
     }
+    
+
     
     setAnswers(prev => ({
       ...prev,
@@ -63,7 +67,7 @@ const PlacementTest = ({ onFinishTest, onBack }) => {
     const question = questions[currentQuestion];
     
     if (question.type === 'multiple_choice' && question.selectCount) {
-      return currentAnswer ? currentAnswer.length : 0;
+      return Array.isArray(currentAnswer) ? currentAnswer.length : 0;
     }
     return null;
   };
@@ -147,10 +151,42 @@ const PlacementTest = ({ onFinishTest, onBack }) => {
     }
   };
 
-  const handleFinishTest = () => {
-    if (onFinishTest) {
-      onFinishTest();
-    } else {
+  const handleFinishTest = async () => {
+    try {
+      // Get user data from localStorage or create a default user
+      const userTestData = localStorage.getItem('userTestData');
+      let userData;
+      
+      if (userTestData) {
+        userData = JSON.parse(userTestData);
+      } else {
+        // Create default user data if none exists
+        userData = {
+          name: 'Guest User',
+          email: 'guest@example.com',
+          id: Date.now().toString()
+        };
+      }
+      
+      // Create a proper user object for authentication
+      const user = {
+        id: userData.id,
+        name: userData.name,
+        email: userData.email,
+        testResults: testResults
+      };
+      
+      // Log in the user
+      await login(user);
+      
+      // Store user data in localStorage for persistence
+      localStorage.setItem('user', JSON.stringify(user));
+      
+      // Navigate to dashboard
+      navigate('/dashboard');
+    } catch (error) {
+      console.error('Error logging in user:', error);
+      // Fallback: still navigate to dashboard
       navigate('/dashboard');
     }
   };
@@ -331,7 +367,7 @@ const PlacementTest = ({ onFinishTest, onBack }) => {
                 <input
                   type="checkbox"
                   value={option}
-                  checked={currentAnswer && currentAnswer.includes(option)}
+                  checked={Array.isArray(currentAnswer) && currentAnswer.includes(option)}
                   onChange={() => handleMultipleChoiceChange(option)}
                 />
                 <span className="checkbox-custom"></span>

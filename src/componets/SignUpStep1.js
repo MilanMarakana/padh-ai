@@ -35,7 +35,32 @@ const SignUpStep1 = ({ onNext }) => {
     <div className="signup-container">
       <div className="signup-content">
         <h1 className="signup-title">{t.signupTitle}</h1>
+         {/* Language Selection Dropdown */}
+         <div className="language-dropdown-container">
+          <div 
+            className="language-selector"
+            onClick={() => setShowLanguageDropdown(!showLanguageDropdown)}
+          >
+            <span className="language-icon">🌐</span>
+            <span className="selected-language">{currentLanguage}</span>
+            <span className="dropdown-arrow">▼</span>
+          </div>
+          {showLanguageDropdown && (
+            <div className="language-dropdown-menu">
+              {languages.map((language) => (
+                <div
+                  key={language}
+                  className={`language-option ${currentLanguage === language ? 'selected' : ''}`}
+                  onClick={() => handleLanguageSelect(language)}
+                >
+                  {language}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
         <div className="input-container">
+          
           <input
             type="email"
             name="email"
@@ -62,30 +87,7 @@ const SignUpStep1 = ({ onNext }) => {
           />
         </div>
         
-        {/* Language Selection Dropdown */}
-        <div className="language-dropdown-container">
-          <div 
-            className="language-selector"
-            onClick={() => setShowLanguageDropdown(!showLanguageDropdown)}
-          >
-            <span className="language-icon">🌐</span>
-            <span className="selected-language">{currentLanguage}</span>
-            <span className="dropdown-arrow">▼</span>
-          </div>
-          {showLanguageDropdown && (
-            <div className="language-dropdown-menu">
-              {languages.map((language) => (
-                <div
-                  key={language}
-                  className={`language-option ${currentLanguage === language ? 'selected' : ''}`}
-                  onClick={() => handleLanguageSelect(language)}
-                >
-                  {language}
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
+       
         
         <button 
           className="signup-button"

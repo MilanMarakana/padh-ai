@@ -13,7 +13,7 @@ const translations = {
     loginTitle: 'Login',
     emailPlaceholder: 'Enter your email (any email works)',
     passwordPlaceholder: 'Enter your password (any password works)',
-    loginButtonText: 'Login (No Backend - Any Credentials Work)',
+    loginButtonText: 'Login',
     backToWelcome: 'Back to Welcome',
     
     // SignUp pages

@@ -41,8 +41,10 @@ export const AuthProvider = ({ children }) => {
   const login = async (payload) => {
     // Handle both API login and mock login
     if (payload && payload.id && payload.name) {
-      // This is a mock user object from Login component
+      // This is a mock user object from Login component or test completion
       setUser(payload);
+      // Store user in localStorage for persistence
+      localStorage.setItem('user', JSON.stringify(payload));
       return { user: payload };
     } else {
       // This is a regular API login
@@ -57,6 +59,9 @@ export const AuthProvider = ({ children }) => {
     setToken(null);
     setUser(null);
     localStorage.removeItem('user');
+    localStorage.removeItem('userTestData');
+    // Clear any other related data
+    sessionStorage.clear();
   };
 
   const value = { user, loading, signup, login, logout };

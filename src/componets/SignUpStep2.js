@@ -29,7 +29,9 @@ const SignUpStep2 = ({ onComplete, onBack }) => {
     try {
       // Use default values if fields are empty
       const testData = {
+        id: Date.now().toString(),
         name: formData.name || 'Guest User',
+        email: 'guest@example.com', // Default email for guest users
         nativeLanguage: formData.nativeLanguage || 'English',
         grade: formData.grade || 'Grade 5',
         age: formData.age || '10'

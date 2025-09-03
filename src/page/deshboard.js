@@ -1,8 +1,51 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Dashboard.css';
 import { useAuth } from '../context/AuthContext';
 import { useLanguage } from '../context/LanguageContext';
+import { usePreventNavigation } from '../hooks/usePreventNavigation';
+
+// Settings Content Component
+const SettingsContent = () => {
+  const { currentLanguage, changeLanguage } = useLanguage();
+  const [showLanguageDropdown, setShowLanguageDropdown] = useState(false);
+
+  const languages = ['English', 'Hindi', 'Gujarati', 'Spanish', 'French'];
+
+  const handleLanguageSelect = (language) => {
+    changeLanguage(language);
+    setShowLanguageDropdown(false);
+  };
+
+  return (
+    <div className="settings-section">
+      <h3>Language Settings</h3>
+      <div className="language-dropdown-container">
+        <div 
+          className="language-selector"
+          onClick={() => setShowLanguageDropdown(!showLanguageDropdown)}
+        >
+          <span className="language-icon">🌐</span>
+          <span className="selected-language">{currentLanguage}</span>
+          <span className="dropdown-arrow">▼</span>
+        </div>
+        {showLanguageDropdown && (
+          <div className="language-dropdown-menu">
+            {languages.map((language) => (
+              <div
+                key={language}
+                className={`language-option ${currentLanguage === language ? 'selected' : ''}`}
+                onClick={() => handleLanguageSelect(language)}
+              >
+                {language}
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
 
 const Dashboard = () => {
   const { user, logout } = useAuth();
@@ -11,6 +54,17 @@ const Dashboard = () => {
   const navigate = useNavigate();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [activePage, setActivePage] = useState('dashboard');
+  const [showSettings, setShowSettings] = useState(false);
+
+  // Use custom hook to prevent navigation
+  usePreventNavigation(true);
+
+  // Redirect to welcome page if not authenticated
+  useEffect(() => {
+    if (!user) {
+      navigate('/');
+    }
+  }, [user, navigate]);
 
   const lessonData = [
     {
@@ -66,10 +120,17 @@ const Dashboard = () => {
         // Navigate to account page or show account modal
         console.log('Navigate to My Account page');
         break;
+      case 'settings':
+        // Show settings modal
+        setShowSettings(true);
+        break;
       case 'logout':
-        // Handle logout
+        // Handle logout - clear all data and redirect
         logout();
-        navigate('/');
+        // Clear any additional data
+        localStorage.removeItem('userTestData');
+        // Force redirect to welcome page
+        window.location.href = '/';
         break;
       default:
         break;
@@ -86,11 +147,30 @@ const Dashboard = () => {
     setIsSidebarOpen(false);
   };
 
+  const handleSettingsClose = () => {
+    setShowSettings(false);
+  };
+
   return (
     <div className="dashboard-container">
       {/* Sidebar Overlay */}
       {isSidebarOpen && (
         <div className="sidebar-overlay" onClick={handleOverlayClick}></div>
+      )}
+
+      {/* Settings Modal */}
+      {showSettings && (
+        <div className="settings-overlay" onClick={handleSettingsClose}>
+          <div className="settings-modal" onClick={(e) => e.stopPropagation()}>
+            <div className="settings-header">
+              <h2>Settings</h2>
+              <button className="settings-close" onClick={handleSettingsClose}>×</button>
+            </div>
+            <div className="settings-content">
+              <SettingsContent />
+            </div>
+          </div>
+        </div>
       )}
 
       {/* Sidebar Navigation */}
@@ -116,6 +196,12 @@ const Dashboard = () => {
             onClick={() => handleSidebarItemClick('account')}
           >
             {t.accountButton}
+          </button>
+          <button 
+            className="sidebar-item"
+            onClick={() => handleSidebarItemClick('settings')}
+          >
+            Settings
           </button>
           <button 
             className="sidebar-item logout-button"
@@ -144,6 +230,19 @@ const Dashboard = () => {
         <div className="greeting-section">
           <h2 className="greeting-title">Hi {userName}!</h2>
           <p className="greeting-subtitle">{t.greetingSubtitle}</p>
+          
+        
+          
+          {user?.testResults && (
+            <div className="test-score-display">
+              <p className="test-score-text">
+                Your placement test score: <strong>{user.testResults.score}%</strong>
+              </p>
+              <p className="test-score-details">
+                {user.testResults.correctAnswers} out of {user.testResults.totalQuestions} questions correct
+              </p>
+            </div>
+          )}
         </div>
 
         {/* Lesson Progress Cards */}
