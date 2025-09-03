@@ -118,6 +118,26 @@
   position: relative;
 }
 
+/* Question Progress Bar */
+.question-progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #2A335C;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(42, 51, 92, 0.3);
+  border: 2px solid #2A335C;
+}
+
+.progress-fill {
+  height: 100%;
+  background: white;
+  border-radius: 8px;
+  transition: width 0.5s ease;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
 .placement-title {
   color: #2A335C;
   font-size: 2.5rem;
@@ -356,7 +376,27 @@
 
 .next-btn:disabled {
   background: #ccc;
+  color: #999;
   cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+  opacity: 0.6;
+  border: 2px solid #ddd;
+}
+
+.next-btn.disabled {
+  background: #ccc;
+  color: #999;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+  opacity: 0.6;
+  border: 2px solid #ddd;
+}
+
+.next-btn.disabled:hover {
+  background: #ccc;
+  color: #999;
   transform: none;
   box-shadow: none;
 }

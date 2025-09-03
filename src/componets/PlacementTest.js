@@ -72,6 +72,27 @@ const PlacementTest = ({ onFinishTest, onBack }) => {
     return null;
   };
 
+  // Check if current question has been answered
+  const isCurrentQuestionAnswered = () => {
+    const currentAnswer = answers[currentQuestion];
+    const question = questions[currentQuestion];
+    
+    if (!currentAnswer) return false;
+    
+    switch (question.type) {
+      case 'multiple_choice':
+        return Array.isArray(currentAnswer) && currentAnswer.length > 0;
+      case 'single_choice':
+      case 'yes_no':
+        return currentAnswer && currentAnswer.trim() !== '';
+      case 'fill_blank':
+      case 'short_answer':
+        return currentAnswer && currentAnswer.trim() !== '';
+      default:
+        return currentAnswer && currentAnswer.trim() !== '';
+    }
+  };
+
   const checkAnswer = (userAnswer, correctAnswer, questionType) => {
     if (questionType === 'multiple_choice') {
       const correctAnswers = Array.isArray(correctAnswer) ? correctAnswer : [correctAnswer];
@@ -302,6 +323,12 @@ const PlacementTest = ({ onFinishTest, onBack }) => {
       <div className="airplane airplane-1"></div>
       <div className="airplane airplane-2"></div>
       <div className="question-content">
+      <div className="question-progress-bar">
+        <div 
+          className="progress-fill" 
+          style={{ width: `${((currentQuestion + 1) / questions.length) * 100}%` }}
+        ></div>
+      </div>
         <h1 className="question-title">{t.questionText}</h1>
         <div className="question-card">
           <div className="question-header">
@@ -320,8 +347,9 @@ const PlacementTest = ({ onFinishTest, onBack }) => {
             </button>
           )}
           <button 
-            className="question-button next-btn" 
+            className={`question-button next-btn ${!isCurrentQuestionAnswered() ? 'disabled' : ''}`}
             onClick={handleNext}
+            disabled={!isCurrentQuestionAnswered()}
           >
             {currentQuestion === questions.length - 1 ? t.submitButton : t.nextButton}
           </button>

@@ -8,26 +8,26 @@ const translations = {
     welcomeSubtitle: 'Start your journey to master English',
     loginButton: 'Login',
     signupButton: 'Sign Up',
-    
+
     // Login page
     loginTitle: 'Login',
-    emailPlaceholder: 'Enter your email (any email works)',
-    passwordPlaceholder: 'Enter your password (any password works)',
+    emailPlaceholder: 'Enter your email',
+    passwordPlaceholder: 'Enter your password',
     loginButtonText: 'Login',
     backToWelcome: 'Back to Welcome',
-    
+
     // SignUp pages
     signupTitle: 'Sign Up',
     confirmPasswordPlaceholder: 'Confirm Password',
     continueButton: 'Continue',
-    
+
     // SignUpStep2
     namePlaceholder: 'Name (optional)',
-    nativeLanguagePlaceholder: 'Native Language (optional)',
-    gradePlaceholder: 'Grade (optional)',
+    nativeLanguagePlaceholder: 'Native Language',
+    gradePlaceholder: 'Grade',
     agePlaceholder: 'Age (optional)',
-    takeTestButton: 'Take Placement Test (Goes to Next Page)',
-    
+    takeTestButton: 'Take Placement Test',
+
     // Dashboard
     dashboardTitle: 'Dashboard',
     greetingSubtitle: 'Ready to improve your English?',
@@ -35,14 +35,14 @@ const translations = {
     progressButton: 'Progress',
     accountButton: 'My Account',
     logoutButton: 'Logout',
-    
+
     // Placement Test
     testTitle: 'Placement Test',
     questionText: 'Question',
     nextButton: 'Next',
     submitButton: 'Submit Test',
     backButton: 'Back',
-    
+
     // Test Results
     testResults: 'Test Results',
     questionDetails: 'Question Details',
@@ -60,26 +60,26 @@ const translations = {
     welcomeSubtitle: 'अंग्रेजी में महारत हासिल करने की अपनी यात्रा शुरू करें',
     loginButton: 'लॉगिन',
     signupButton: 'साइन अप',
-    
+
     // Login page
     loginTitle: 'लॉगिन',
-    emailPlaceholder: 'अपना ईमेल दर्ज करें (कोई भी ईमेल काम करता है)',
-    passwordPlaceholder: 'अपना पासवर्ड दर्ज करें (कोई भी पासवर्ड काम करता है)',
-    loginButtonText: 'लॉगिन (बैकएंड नहीं - कोई भी क्रेडेंशियल काम करता है)',
+    emailPlaceholder: 'अपना ईमेल दर्ज करें',
+    passwordPlaceholder: 'अपना पासवर्ड दर्ज करें',
+    loginButtonText: 'लॉगिन',
     backToWelcome: 'स्वागत पेज पर वापस जाएं',
-    
+
     // SignUp pages
     signupTitle: 'साइन अप',
     confirmPasswordPlaceholder: 'पासवर्ड की पुष्टि करें',
     continueButton: 'जारी रखें',
-    
+
     // SignUpStep2
-    namePlaceholder: 'नाम (वैकल्पिक)',
-    nativeLanguagePlaceholder: 'मातृभाषा (वैकल्पिक)',
-    gradePlaceholder: 'कक्षा (वैकल्पिक)',
-    agePlaceholder: 'उम्र (वैकल्पिक)',
-    takeTestButton: 'प्लेसमेंट टेस्ट लें (अगला पेज जाता है)',
-    
+    namePlaceholder: 'नाम',
+    nativeLanguagePlaceholder: 'मातृभाषा',
+    gradePlaceholder: 'कक्षा',
+    agePlaceholder: 'उम्र',
+    takeTestButton: 'प्लेसमेंट टेस्ट लें',
+
     // Dashboard
     dashboardTitle: 'डैशबोर्ड',
     greetingSubtitle: 'अंग्रेजी सुधारने के लिए तैयार हैं?',
@@ -87,14 +87,14 @@ const translations = {
     progressButton: 'प्रगति',
     accountButton: 'मेरा खाता',
     logoutButton: 'लॉगआउट',
-    
+
     // Placement Test
     testTitle: 'प्लेसमेंट टेस्ट',
     questionText: 'प्रश्न',
     nextButton: 'अगला',
     submitButton: 'टेस्ट सबमिट करें',
     backButton: 'वापस',
-    
+
     // Test Results
     testResults: 'टेस्ट परिणाम',
     questionDetails: 'प्रश्न विवरण',
@@ -112,26 +112,26 @@ const translations = {
     welcomeSubtitle: 'અંગ્રેજીમાં નિપુણતા મેળવવાની તમારી યાત્રા શરૂ કરો',
     loginButton: 'લૉગિન',
     signupButton: 'સાઇન અપ',
-    
+
     // Login page
     loginTitle: 'લૉગિન',
-    emailPlaceholder: 'તમારો ઈમેલ દાખલ કરો (કોઈપણ ઈમેલ કામ કરે છે)',
-    passwordPlaceholder: 'તમારો પાસવર્ડ દાખલ કરો (કોઈપણ પાસવર્ડ કામ કરે છે)',
-    loginButtonText: 'લૉગિન (બેકએન્ડ નહીં - કોઈપણ ક્રેડેન્શિયલ કામ કરે છે)',
+    emailPlaceholder: 'તમારો ઈમેલ દાખલ કરો',
+    passwordPlaceholder: 'તમારો પાસવર્ડ દાખલ કરો',
+    loginButtonText: 'લૉગિન',
     backToWelcome: 'સ્વાગત પેજ પર પાછા જાઓ',
-    
+
     // SignUp pages
     signupTitle: 'સાઇન અપ',
     confirmPasswordPlaceholder: 'પાસવર્ડની પુષ્ટિ કરો',
     continueButton: 'જારી રાખો',
-    
+
     // SignUpStep2
     namePlaceholder: 'નામ (વૈકલ્પિક)',
-    nativeLanguagePlaceholder: 'માતૃભાષા (વૈકલ્પિક)',
-    gradePlaceholder: 'કક્ષા (વૈકલ્પિક)',
-    agePlaceholder: 'ઉંમર (વૈકલ્પિક)',
+    nativeLanguagePlaceholder: 'માતૃભાષા',
+    gradePlaceholder: 'કક્ષા',
+    agePlaceholder: 'ઉંમર',
     takeTestButton: 'પ્લેસમેન્ટ ટેસ્ટ લો (આગળનું પેજ જાય છે)',
-    
+
     // Dashboard
     dashboardTitle: 'ડેશબોર્ડ',
     greetingSubtitle: 'અંગ્રેજી સુધારવા માટે તૈયાર છો?',
@@ -139,14 +139,14 @@ const translations = {
     progressButton: 'પ્રગતિ',
     accountButton: 'મારું ખાતું',
     logoutButton: 'લૉગઆઉટ',
-    
+
     // Placement Test
     testTitle: 'પ્લેસમેન્ટ ટેસ્ટ',
     questionText: 'પ્રશ્ન',
     nextButton: 'આગળ',
     submitButton: 'ટેસ્ટ સબમિટ કરો',
     backButton: 'પાછળ',
-    
+
     // Test Results
     testResults: 'ટેસ્ટ પરિણામ',
     questionDetails: 'પ્રશ્ન વિગતો',
@@ -164,26 +164,26 @@ const translations = {
     welcomeSubtitle: 'Comienza tu viaje para dominar el inglés',
     loginButton: 'Iniciar Sesión',
     signupButton: 'Registrarse',
-    
+
     // Login page
     loginTitle: 'Iniciar Sesión',
-    emailPlaceholder: 'Ingresa tu correo (cualquier correo funciona)',
-    passwordPlaceholder: 'Ingresa tu contraseña (cualquier contraseña funciona)',
-    loginButtonText: 'Iniciar Sesión (Sin Backend - Cualquier Credencial Funciona)',
+    emailPlaceholder: 'Ingresa tu correo',
+    passwordPlaceholder: 'Ingresa tu contraseña',
+    loginButtonText: 'Iniciar Sesión',
     backToWelcome: 'Volver al Inicio',
-    
+
     // SignUp pages
     signupTitle: 'Registrarse',
     confirmPasswordPlaceholder: 'Confirmar contraseña',
     continueButton: 'Continuar',
-    
+
     // SignUpStep2
-    namePlaceholder: 'Nombre (opcional)',
-    nativeLanguagePlaceholder: 'Idioma nativo (opcional)',
-    gradePlaceholder: 'Grado (opcional)',
-    agePlaceholder: 'Edad (opcional)',
-    takeTestButton: 'Tomar Prueba de Ubicación (Va a la Siguiente Página)',
-    
+    namePlaceholder: 'Nombre',
+    nativeLanguagePlaceholder: 'Idioma nativo',
+    gradePlaceholder: 'Grado',
+    agePlaceholder: 'Edad',
+    takeTestButton: 'Tomar Prueba de Ubicación',
+
     // Dashboard
     dashboardTitle: 'Panel de Control',
     greetingSubtitle: '¿Listo para mejorar tu inglés?',
@@ -191,14 +191,14 @@ const translations = {
     progressButton: 'Progreso',
     accountButton: 'Mi Cuenta',
     logoutButton: 'Cerrar Sesión',
-    
+
     // Placement Test
     testTitle: 'Prueba de Ubicación',
     questionText: 'Pregunta',
     nextButton: 'Siguiente',
     submitButton: 'Enviar Prueba',
     backButton: 'Atrás',
-    
+
     // Test Results
     testResults: 'Resultados de la Prueba',
     questionDetails: 'Detalles de Preguntas',
@@ -216,26 +216,26 @@ const translations = {
     welcomeSubtitle: 'Commencez votre voyage pour maîtriser l\'anglais',
     loginButton: 'Se Connecter',
     signupButton: 'S\'inscrire',
-    
+
     // Login page
     loginTitle: 'Se Connecter',
-    emailPlaceholder: 'Entrez votre e-mail (n\'importe quel e-mail fonctionne)',
-    passwordPlaceholder: 'Entrez votre mot de passe (n\'importe quel mot de passe fonctionne)',
-    loginButtonText: 'Se Connecter (Pas de Backend - N\'importe Quelles Identifiants Fonctionnent)',
+    emailPlaceholder: 'Entrez votre e-mail',
+    passwordPlaceholder: 'Entrez votre mot de passe',
+    loginButtonText: 'Se Connecter',
     backToWelcome: 'Retour à l\'Accueil',
-    
+
     // SignUp pages
     signupTitle: 'S\'inscrire',
     confirmPasswordPlaceholder: 'Confirmer le mot de passe',
     continueButton: 'Continuer',
-    
+
     // SignUpStep2
-    namePlaceholder: 'Nom (optionnel)',
-    nativeLanguagePlaceholder: 'Langue maternelle (optionnel)',
-    gradePlaceholder: 'Niveau (optionnel)',
-    agePlaceholder: 'Âge (optionnel)',
-    takeTestButton: 'Passer le Test de Placement (Va à la Page Suivante)',
-    
+    namePlaceholder: 'Nom',
+    nativeLanguagePlaceholder: 'Langue maternelle',
+    gradePlaceholder: 'Niveau',
+    agePlaceholder: 'Âge',
+    takeTestButton: 'Passer le Test de Placement',
+
     // Dashboard
     dashboardTitle: 'Tableau de Bord',
     greetingSubtitle: 'Prêt à améliorer votre anglais?',
@@ -243,14 +243,14 @@ const translations = {
     progressButton: 'Progrès',
     accountButton: 'Mon Compte',
     logoutButton: 'Se Déconnecter',
-    
+
     // Placement Test
     testTitle: 'Test de Placement',
     questionText: 'Question',
     nextButton: 'Suivant',
     submitButton: 'Soumettre le Test',
     backButton: 'Retour',
-    
+
     // Test Results
     testResults: 'Résultats du Test',
     questionDetails: 'Détails des Questions',
