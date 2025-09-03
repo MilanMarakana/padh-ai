@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './SignUpStep2.css';
-import { useAuth } from '../context/AuthContext';
 import { useLanguage } from '../context/LanguageContext';
 
 const SignUpStep2 = ({ onComplete, onBack }) => {
-  const { signup } = useAuth();
   const { t } = useLanguage();
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -14,28 +12,14 @@ const SignUpStep2 = ({ onComplete, onBack }) => {
     grade: '',
     age: ''
   });
-  const [showDropdown, setShowDropdown] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState('');
-
-  const languages = [
-    'Hindi', 'Italian', 'Spanish', 'Russian', 'English', 'French', 
-    'German', 'Chinese', 'Japanese', 'Korean', 'Arabic', 'Portuguese'
-  ];
 
   const handleInputChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
-  };
-
-  const handleLanguageSelect = (language) => {
-    setFormData({
-      ...formData,
-      nativeLanguage: language
-    });
-    setShowDropdown(false);
   };
 
   const handleTakeTest = async () => {

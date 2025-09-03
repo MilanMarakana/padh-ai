@@ -56,36 +56,14 @@ const PlacementTest = ({ onFinishTest, onBack }) => {
     }));
   };
 
-  const isAnswerValid = () => {
-    const currentAnswer = answers[currentQuestion];
-    const question = questions[currentQuestion];
-    
-    if (!currentAnswer) return false;
-    
-    switch (question.type) {
-      case 'fill_blank':
-      case 'short_answer':
-        return currentAnswer.trim().length > 0;
-      case 'single_choice':
-      case 'yes_no':
-        return currentAnswer.length > 0;
-      case 'multiple_choice':
-        if (question.selectCount) {
-          return currentAnswer.length === question.selectCount;
-        }
-        return currentAnswer.length > 0;
-      default:
-        return false;
-    }
-  };
+  // Removed unused isAnswerValid function
 
   const getSelectionStatus = () => {
     const currentAnswer = answers[currentQuestion];
     const question = questions[currentQuestion];
     
     if (question.type === 'multiple_choice' && question.selectCount) {
-      const selectedCount = currentAnswer ? currentAnswer.length : 0;
-      return;
+      return currentAnswer ? currentAnswer.length : 0;
     }
     return null;
   };
