@@ -78,6 +78,85 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+/* Language Dropdown Styles */
+.language-dropdown-container {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.language-selector {
+  background-color: #2A335C;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 12px;
+  padding: 16px 20px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.language-selector:hover {
+  background-color: #1a2340;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.language-icon {
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+
+.selected-language {
+  flex: 1;
+  text-align: left;
+}
+
+.dropdown-arrow {
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.language-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #2A335C;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  margin-top: 5px;
+  overflow: hidden;
+}
+
+.language-option {
+  padding: 16px 20px;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.language-option:hover {
+  background-color: #1a2340;
+}
+
+.language-option.selected {
+  background-color: #FF8E32;
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.language-option:last-child {
+  border-bottom: none;
+}
+
 /* Mobile responsive adjustments */
 @media (max-width: 480px) {
   .signup-title {

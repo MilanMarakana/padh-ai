@@ -3,9 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import './PlacementTest.css';
 import questionsData from './data.json';
 import api from '../api/client';
+import { useLanguage } from '../context/LanguageContext';
 
 const PlacementTest = ({ onFinishTest, onBack }) => {
   const navigate = useNavigate();
+  const { t } = useLanguage();
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState({});
   const [isTestStarted, setIsTestStarted] = useState(false);
@@ -187,7 +189,7 @@ const PlacementTest = ({ onFinishTest, onBack }) => {
         <div className="airplane airplane-1"></div>
         <div className="airplane airplane-2"></div>
         <div className="results-content">
-          <h1 className="results-title">Test Results</h1>
+                     <h1 className="results-title">{t.testResults}</h1>
           
           {/* Score Summary */}
           <div className="score-summary">
@@ -195,24 +197,24 @@ const PlacementTest = ({ onFinishTest, onBack }) => {
               <span className="score-percentage">{percentage}%</span>
             </div>
             <div className="score-details">
-              <div className="score-item correct">
-                <span className="score-label">Correct:</span>
-                <span className="score-value">{correctCount}</span>
-              </div>
-              <div className="score-item incorrect">
-                <span className="score-label">Incorrect:</span>
-                <span className="score-value">{incorrectCount}</span>
-              </div>
-              <div className="score-item total">
-                <span className="score-label">Total:</span>
-                <span className="score-value">{testResults.totalQuestions}</span>
-              </div>
+                             <div className="score-item correct">
+                 <span className="score-label">{t.correct}:</span>
+                 <span className="score-value">{correctCount}</span>
+               </div>
+               <div className="score-item incorrect">
+                 <span className="score-label">{t.incorrect}:</span>
+                 <span className="score-value">{incorrectCount}</span>
+               </div>
+               <div className="score-item total">
+                 <span className="score-label">{t.total}:</span>
+                 <span className="score-value">{testResults.totalQuestions}</span>
+               </div>
             </div>
           </div>
 
           {/* Question Results */}
           <div className="question-results">
-            <h3 className="results-subtitle">Question Details</h3>
+                         <h3 className="results-subtitle">{t.questionDetails}</h3>
             <div className="results-list">
               {testResults.questionResults.map((result, index) => (
                 <div key={index} className={`result-item ${result.isCorrect ? 'correct' : 'incorrect'}`}>
@@ -223,16 +225,16 @@ const PlacementTest = ({ onFinishTest, onBack }) => {
                     </span>
                   </div>
                   <div className="result-question">{result.question}</div>
-                  <div className="result-answers">
-                    <div className="result-answer">
-                      <span className="answer-label">Your Answer:</span>
-                      <span className="answer-value">{Array.isArray(result.userAnswer) ? result.userAnswer.join(', ') : result.userAnswer || 'No answer'}</span>
-                    </div>
-                    <div className="result-answer">
-                      <span className="answer-label">Correct Answer:</span>
-                      <span className="answer-value">{Array.isArray(result.correctAnswer) ? result.correctAnswer.join(', ') : result.correctAnswer}</span>
-                    </div>
-                  </div>
+                                     <div className="result-answers">
+                     <div className="result-answer">
+                       <span className="answer-label">{t.yourAnswer}:</span>
+                       <span className="answer-value">{Array.isArray(result.userAnswer) ? result.userAnswer.join(', ') : result.userAnswer || t.noAnswer}</span>
+                     </div>
+                     <div className="result-answer">
+                       <span className="answer-label">{t.correctAnswer}:</span>
+                       <span className="answer-value">{Array.isArray(result.correctAnswer) ? result.correctAnswer.join(', ') : result.correctAnswer}</span>
+                     </div>
+                   </div>
                 </div>
               ))}
             </div>
@@ -240,9 +242,9 @@ const PlacementTest = ({ onFinishTest, onBack }) => {
 
           {/* Action Button */}
           <div className="results-actions">
-            <button className="placement-button" onClick={handleFinishTest}>
-              Start Learning
-            </button>
+                         <button className="placement-button" onClick={handleFinishTest}>
+               {t.startLearning}
+             </button>
           </div>
         </div>
       </div>
@@ -259,7 +261,7 @@ const PlacementTest = ({ onFinishTest, onBack }) => {
         <div className="airplane airplane-1"></div>
         <div className="airplane airplane-2"></div>
         <div className="placement-content">
-          <h1 className="placement-title">Placement Test</h1>
+          <h1 className="placement-title">{t.testTitle}</h1>
           <div className="placement-description">
             <p>
               This short test will help<br />
@@ -274,7 +276,7 @@ const PlacementTest = ({ onFinishTest, onBack }) => {
             className="placement-button"
             onClick={handleStartTest}
           >
-            Start Test
+            {t.submitButton}
           </button>
         </div>
       </div>
@@ -286,7 +288,7 @@ const PlacementTest = ({ onFinishTest, onBack }) => {
       <div className="airplane airplane-1"></div>
       <div className="airplane airplane-2"></div>
       <div className="question-content">
-        <h1 className="question-title">Answer the question</h1>
+        <h1 className="question-title">{t.questionText}</h1>
         <div className="question-card">
           <div className="question-header">
             <span className="question-number-display">Question {questions[currentQuestion].questionNumber}</span>
@@ -300,14 +302,14 @@ const PlacementTest = ({ onFinishTest, onBack }) => {
         <div className="question-actions">
           {currentQuestion > 0 && (
             <button className="question-button back-btn" onClick={handleBack}>
-              Back
+              {t.backButton}
             </button>
           )}
           <button 
             className="question-button next-btn" 
             onClick={handleNext}
           >
-            {currentQuestion === questions.length - 1 ? 'Finish' : 'Next'}
+            {currentQuestion === questions.length - 1 ? t.submitButton : t.nextButton}
           </button>
         </div>
         <div className="progress-indicator">

@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Dashboard.css';
 import { useAuth } from '../context/AuthContext';
+import { useLanguage } from '../context/LanguageContext';
 
 const Dashboard = () => {
   const { user, logout } = useAuth();
+  const { t } = useLanguage();
   const userName = user?.name || user?.email || "User";
   const navigate = useNavigate();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -94,32 +96,32 @@ const Dashboard = () => {
       {/* Sidebar Navigation */}
       <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
         <div className="sidebar-header">
-          <h3 className="sidebar-title">Menu</h3>
+          <h3 className="sidebar-title">{t.menuTitle}</h3>
         </div>
         <nav className="sidebar-nav">
           <button 
             className={`sidebar-item ${activePage === 'dashboard' ? 'active' : ''}`}
             onClick={() => handleSidebarItemClick('dashboard')}
           >
-            Dashboard
+            {t.dashboardTitle}
           </button>
           <button 
             className={`sidebar-item ${activePage === 'progress' ? 'active' : ''}`}
             onClick={() => handleSidebarItemClick('progress')}
           >
-            Progress
+            {t.progressButton}
           </button>
           <button 
             className={`sidebar-item ${activePage === 'account' ? 'active' : ''}`}
             onClick={() => handleSidebarItemClick('account')}
           >
-            My Account
+            {t.accountButton}
           </button>
           <button 
             className="sidebar-item logout-button"
             onClick={() => handleSidebarItemClick('logout')}
           >
-            Logout
+            {t.logoutButton}
           </button>
         </nav>
       </div>
@@ -135,13 +137,13 @@ const Dashboard = () => {
               <span></span>
             </div>
           </button>
-          <h1 className="dashboard-title">Dashboard</h1>
+          <h1 className="dashboard-title">{t.dashboardTitle}</h1>
         </div>
 
         {/* Greeting Section */}
         <div className="greeting-section">
           <h2 className="greeting-title">Hi {userName}!</h2>
-          <p className="greeting-subtitle">Ready to improve your English?</p>
+          <p className="greeting-subtitle">{t.greetingSubtitle}</p>
         </div>
 
         {/* Lesson Progress Cards */}

@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './SignUpStep2.css';
 import { useAuth } from '../context/AuthContext';
+import { useLanguage } from '../context/LanguageContext';
 
 const SignUpStep2 = ({ onComplete, onBack }) => {
   const { signup } = useAuth();
+  const { t } = useLanguage();
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
@@ -64,61 +66,26 @@ const SignUpStep2 = ({ onComplete, onBack }) => {
   return (
     <div className="signup-container">
       <div className="signup-content">
-        <h1 className="signup-title">Sign Up</h1>
+        <h1 className="signup-title">{t.signupTitle}</h1>
         <div className="input-container">
-          <input
-            type="text"
-            name="name"
-            placeholder="Name (optional)"
-            value={formData.name}
-            onChange={handleInputChange}
-            className="signup-input"
-          />
+                      <input
+              type="text"
+              name="name"
+              placeholder={t.namePlaceholder}
+              value={formData.name}
+              onChange={handleInputChange}
+              className="signup-input"
+            />
           <div className="dropdown-container">
-            <div 
-              className="language-input"
-              onClick={() => setShowDropdown(!showDropdown)}
-            >
-              <span className="search-icon">🔍</span>
-              <input
-                type="text"
-                placeholder="Native Language (optional)"
-                value={formData.nativeLanguage}
-                readOnly
-                className="language-placeholder"
-              />
-              {formData.nativeLanguage && (
-                <span 
-                  className="clear-icon"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setFormData({ ...formData, nativeLanguage: '' });
-                  }}
-                >
-                  ✕
-                </span>
-              )}
-            </div>
-            {showDropdown && (
-              <div className="dropdown-menu">
-                {languages.map((language) => (
-                  <div
-                    key={language}
-                    className="dropdown-item"
-                    onClick={() => handleLanguageSelect(language)}
-                  >
-                    {language}
-                  </div>
-                ))}
-              </div>
-            )}
+           
+            
           </div>
           <div className="input-group">
             {/* Grade */}
             <input
               type="text"
               name="grade"
-              placeholder="Grade (optional)"
+              placeholder={t.gradePlaceholder}
               value={formData.grade}
               onChange={handleInputChange}
               className="signup-input"
@@ -128,7 +95,7 @@ const SignUpStep2 = ({ onComplete, onBack }) => {
           <input
             type="number"
             name="age"
-            placeholder="Age (optional)"
+            placeholder={t.agePlaceholder}
             value={formData.age}
             onChange={handleInputChange}
             className="signup-input"
@@ -142,7 +109,7 @@ const SignUpStep2 = ({ onComplete, onBack }) => {
           onClick={handleTakeTest}
           disabled={submitting}
         >
-          {submitting ? 'Please wait...' : 'Take Placement Test (Goes to Next Page)'}
+          {submitting ? 'Please wait...' : t.takeTestButton}
         </button>
       </div>
     </div>

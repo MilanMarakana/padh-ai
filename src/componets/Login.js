@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
 import { useAuth } from '../context/AuthContext';
+import { useLanguage } from '../context/LanguageContext';
 
 const Login = () => {
   const { login } = useAuth();
+  const { t } = useLanguage();
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: '',
@@ -65,14 +67,14 @@ const Login = () => {
   return (
     <div className="login-container">
       <div className="login-content">
-        <h1 className="login-title">Login</h1>
+        <h1 className="login-title">{t.loginTitle}</h1>
         
         <div className="input-container">
           <div className="input-group">
             <input
               type="email"
               name="email"
-              placeholder="Enter your email (any email works)"
+              placeholder={t.emailPlaceholder}
               value={formData.email}
               onChange={handleInputChange}
               onKeyPress={handleKeyPress}
@@ -84,7 +86,7 @@ const Login = () => {
             <input
               type="password"
               name="password"
-              placeholder="Enter your password (any password works)"
+              placeholder={t.passwordPlaceholder}
               value={formData.password}
               onChange={handleInputChange}
               onKeyPress={handleKeyPress}
@@ -104,14 +106,14 @@ const Login = () => {
           onClick={handleLogin}
           disabled={submitting}
         >
-          {submitting ? 'Logging in...' : 'Login (No Backend - Any Credentials Work)'}
+          {submitting ? 'Logging in...' : t.loginButtonText}
         </button>
         
         <button 
           className="back-button"
           onClick={handleBack}
         >
-          Back to Welcome
+          {t.backToWelcome}
         </button>
       </div>
     </div>
