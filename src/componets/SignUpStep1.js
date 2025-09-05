@@ -11,7 +11,7 @@ const SignUpStep1 = ({ onNext }) => {
   });
   const [showLanguageDropdown, setShowLanguageDropdown] = useState(false);
 
-  const languages = ['English', 'Hindi', 'Gujarati', 'Spanish', 'French'];
+  const languages = ['English', 'Hindi', 'Gujarati', 'Spanish', 'French', 'Punjabi', 'Telugu'];
 
   const handleInputChange = (e) => {
     setFormData({

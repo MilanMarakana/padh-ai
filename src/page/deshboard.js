@@ -10,7 +10,7 @@ const SettingsContent = () => {
   const { currentLanguage, changeLanguage } = useLanguage();
   const [showLanguageDropdown, setShowLanguageDropdown] = useState(false);
 
-  const languages = ['English', 'Hindi', 'Gujarati', 'Spanish', 'French'];
+  const languages = ['English', 'Hindi', 'Gujarati', 'Spanish', 'French', 'Punjabi', 'Telugu'];
 
   const handleLanguageSelect = (language) => {
     changeLanguage(language);

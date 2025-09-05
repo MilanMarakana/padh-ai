@@ -261,6 +261,110 @@ const translations = {
     correctAnswer: 'Réponse Correcte',
     startLearning: 'Commencer à Apprendre',
     noAnswer: 'Aucune réponse'
+  },
+  'Punjabi': {
+    // Welcome page
+    welcomeTitle: 'ਅੰਗਰੇਜ਼ੀ ਸਿੱਖਣ ਵਿੱਚ ਤੁਹਾਡਾ ਸਵਾਗਤ ਹੈ',
+    welcomeSubtitle: 'ਅੰਗਰੇਜ਼ੀ ਵਿੱਚ ਮੁਹਾਰਤ ਹਾਸਲ ਕਰਨ ਦੀ ਆਪਣੀ ਯਾਤਰਾ ਸ਼ੁਰੂ ਕਰੋ',
+    loginButton: 'ਲੌਗ ਇਨ',
+    signupButton: 'ਸਾਈਨ ਅੱਪ',
+
+    // Login page
+    loginTitle: 'ਲੌਗ ਇਨ',
+    emailPlaceholder: 'ਆਪਣਾ ਈਮੇਲ ਦਰਜ ਕਰੋ',
+    passwordPlaceholder: 'ਆਪਣਾ ਪਾਸਵਰਡ ਦਰਜ ਕਰੋ',
+    loginButtonText: 'ਲੌਗ ਇਨ',
+    backToWelcome: 'ਸਵਾਗਤ ਪੰਨੇ ਤੇ ਵਾਪਸ ਜਾਓ',
+
+    // SignUp pages
+    signupTitle: 'ਸਾਈਨ ਅੱਪ',
+    confirmPasswordPlaceholder: 'ਪਾਸਵਰਡ ਦੀ ਪੁਸ਼ਟੀ ਕਰੋ',
+    continueButton: 'ਜਾਰੀ ਰੱਖੋ',
+
+    // SignUpStep2
+    namePlaceholder: 'ਨਾਮ (ਵਿਕਲਪਿਕ)',
+    nativeLanguagePlaceholder: 'ਮਾਤ ਭਾਸ਼ਾ',
+    gradePlaceholder: 'ਕਲਾਸ',
+    agePlaceholder: 'ਉਮਰ',
+    takeTestButton: 'ਪਲੇਸਮੈਂਟ ਟੈਸਟ ਲਓ',
+
+    // Dashboard
+    dashboardTitle: 'ਡੈਸ਼ਬੋਰਡ',
+    greetingSubtitle: 'ਅੰਗਰੇਜ਼ੀ ਸੁਧਾਰਨ ਲਈ ਤਿਆਰ ਹੋ?',
+    menuTitle: 'ਮੀਨੂ',
+    progressButton: 'ਤਰੱਕੀ',
+    accountButton: 'ਮੇਰਾ ਖਾਤਾ',
+    logoutButton: 'ਲੌਗ ਆਉਟ',
+
+    // Placement Test
+    testTitle: 'ਪਲੇਸਮੈਂਟ ਟੈਸਟ',
+    questionText: 'ਸਵਾਲ',
+    nextButton: 'ਅਗਲਾ',
+    submitButton: 'ਟੈਸਟ ਜਮ੍ਹਾ ਕਰੋ',
+    backButton: 'ਵਾਪਸ',
+
+    // Test Results
+    testResults: 'ਟੈਸਟ ਨਤੀਜੇ',
+    questionDetails: 'ਸਵਾਲ ਦੇ ਵੇਰਵੇ',
+    correct: 'ਸਹੀ',
+    incorrect: 'ਗਲਤ',
+    total: 'ਕੁੱਲ',
+    yourAnswer: 'ਤੁਹਾਡਾ ਜਵਾਬ',
+    correctAnswer: 'ਸਹੀ ਜਵਾਬ',
+    startLearning: 'ਸਿੱਖਣਾ ਸ਼ੁਰੂ ਕਰੋ',
+    noAnswer: 'ਕੋਈ ਜਵਾਬ ਨਹੀਂ'
+  },
+  'Telugu': {
+    // Welcome page
+    welcomeTitle: 'ఇంగ్లీష్ నేర్చుకోవడానికి స్వాగతం',
+    welcomeSubtitle: 'ఇంగ్లీష్‌లో నిపుణత సాధించే మీ ప్రయాణాన్ని ప్రారంభించండి',
+    loginButton: 'లాగిన్',
+    signupButton: 'సైన్ అప్',
+
+    // Login page
+    loginTitle: 'లాగిన్',
+    emailPlaceholder: 'మీ ఇమెయిల్‌ను నమోదు చేయండి',
+    passwordPlaceholder: 'మీ పాస్‌వర్డ్‌ను నమోదు చేయండి',
+    loginButtonText: 'లాగిన్',
+    backToWelcome: 'స్వాగత పేజీకి తిరిగి వెళ్లండి',
+
+    // SignUp pages
+    signupTitle: 'సైన్ అప్',
+    confirmPasswordPlaceholder: 'పాస్‌వర్డ్‌ను నిర్ధారించండి',
+    continueButton: 'కొనసాగించండి',
+
+    // SignUpStep2
+    namePlaceholder: 'పేరు (ఐచ్ఛికం)',
+    nativeLanguagePlaceholder: 'మాతృభాష',
+    gradePlaceholder: 'తరగతి',
+    agePlaceholder: 'వయస్సు',
+    takeTestButton: 'ప్లేస్‌మెంట్ టెస్ట్ తీసుకోండి',
+
+    // Dashboard
+    dashboardTitle: 'డాష్‌బోర్డ్',
+    greetingSubtitle: 'మీ ఇంగ్లీష్‌ను మెరుగుపరచడానికి సిద్ధంగా ఉన్నారా?',
+    menuTitle: 'మెనూ',
+    progressButton: 'పురోగతి',
+    accountButton: 'నా ఖాతా',
+    logoutButton: 'లాగ్‌అవుట్',
+
+    // Placement Test
+    testTitle: 'ప్లేస్‌మెంట్ టెస్ట్',
+    questionText: 'ప్రశ్న',
+    nextButton: 'తదుపరి',
+    submitButton: 'టెస్ట్‌ను సమర్పించండి',
+    backButton: 'వెనుకకు',
+
+    // Test Results
+    testResults: 'టెస్ట్ ఫలితాలు',
+    questionDetails: 'ప్రశ్న వివరాలు',
+    correct: 'సరైనది',
+    incorrect: 'తప్పు',
+    total: 'మొత్తం',
+    yourAnswer: 'మీ సమాధానం',
+    correctAnswer: 'సరైన సమాధానం',
+    startLearning: 'నేర్చుకోవడం ప్రారంభించండి',
+    noAnswer: 'సమాధానం లేదు'
   }
 };
 
